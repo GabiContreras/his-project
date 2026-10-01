@@ -11,6 +11,7 @@ import { Insumo } from './entities/insumo.entity.js';
 import { SignoVital } from './entities/signo-vital.entity.js';
 import { IndicacionMedica } from './entities/indicacion-medica.entity.js';
 import { AdministracionMedicacion } from './entities/administracion-medicacion.entity.js';
+import { UsuariosModule } from './usuarios/usuarios.module.js';
 
 @Module({
   imports: [
@@ -28,9 +29,12 @@ import { AdministracionMedicacion } from './entities/administracion-medicacion.e
         IndicacionMedica,
         AdministracionMedicacion,
       ],
+      
       synchronize: false,
       ssl: { rejectUnauthorized: false },
     }),
+    //agregar modulos de entidades desde aca
+    UsuariosModule,
   ],
   controllers: [AppController],
   providers: [AppService],

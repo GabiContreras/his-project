@@ -1,4 +1,4 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, CreateDateColumn } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, CreateDateColumn , JoinColumn } from 'typeorm';
 import { Paciente } from './paciente.entity.js';
 import { Usuario } from './usuario.entity.js';
 
@@ -8,10 +8,13 @@ export class SignoVital {
   id: string;
 
   @ManyToOne(() => Paciente, { onDelete: 'CASCADE' })
-  paciente: Paciente;
+@JoinColumn({ name: 'paciente_id' })
+paciente: Paciente;
+
 
   @ManyToOne(() => Usuario, { onDelete: 'RESTRICT' })
-  registradoPor: Usuario;
+@JoinColumn({ name: 'registrado_por_id' })
+registradoPor: Usuario;
 
   @Column()
   tipo: string;
@@ -19,6 +22,6 @@ export class SignoVital {
   @Column({ type: 'float' })
   valor: number;
 
-  @CreateDateColumn({ type: 'timestamptz' })
-  fechaHora: Date;
+  @CreateDateColumn({ type: 'timestamptz', name: 'fecha_hora' })
+fechaHora: Date;
 }

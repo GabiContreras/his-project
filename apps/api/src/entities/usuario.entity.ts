@@ -20,12 +20,12 @@ export class Usuario {
   @Column({ unique: true })
   email: string;
 
-  @Column()
-  passwordHash: string;
+  @Column({ name: 'password_hash' })
+passwordHash: string;
 
   @Column({ type: 'enum', enum: RolUsuario })
   rol: RolUsuario;
 
-  @CreateDateColumn({ type: 'timestamptz' })
-  createdAt: Date;
+  @CreateDateColumn({ type: 'timestamptz', name: 'created_at' })
+createdAt: Date;
 }

@@ -8,9 +8,9 @@ export class Insumo {
   @Column({ unique: true })
   nombre: string;
 
-  @Column()
-  unidadMedida: string;
+  @Column({ name: 'unidad_medida' })
+unidadMedida: string;
 
-  @Column({ type: 'int', default: 0 })
-  cantidadDisponible: number;
+  @Column({ type: 'int', default: 0, name: 'cantidad_disponible' })
+cantidadDisponible: number;
 }

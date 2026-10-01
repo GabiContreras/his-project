@@ -14,8 +14,8 @@ export class Paciente {
   @Column({ unique: true })
   documento: string;
 
-  @Column({ type: 'date' })
-  fechaNacimiento: string;
+  @Column({ type: 'date', name: 'fecha_nacimiento' })
+fechaNacimiento: string;
 
   @Column({ nullable: true })
   telefono: string;
