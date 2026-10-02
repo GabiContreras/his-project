@@ -1,0 +1,4 @@
+[33m1043456[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m Ignorar archivos tsbuildinfo
+[33m8581cb9[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m fix: mapear nombres de columna snake_case en entidades TypeORM
+[33mf0cca37[m feat:entidades TORM, conex supabase, migracion inicial
+[33m1fb7bef[m chore: estructura inicial del monorepo
